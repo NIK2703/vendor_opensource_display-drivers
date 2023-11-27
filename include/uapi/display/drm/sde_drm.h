@@ -401,7 +401,7 @@ struct sde_drm_scaler_v2 {
 /*
  * Destination scaler flag config
  */
-#define SDE_DRM_DESTSCALER_ENABLE           0x1
+#define SDE_DRM_DESTSCALER_ENABLE           0x0
 #define SDE_DRM_DESTSCALER_SCALE_UPDATE     0x2
 #define SDE_DRM_DESTSCALER_ENHANCER_UPDATE  0x4
 #define SDE_DRM_DESTSCALER_PU_ENABLE        0x8
