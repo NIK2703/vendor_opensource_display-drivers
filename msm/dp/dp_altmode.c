@@ -81,7 +81,7 @@ static int dp_altmode_set_usb_dp_mode(struct dp_altmode_private *altmode)
 		DP_WARN("USB busy, retry\n");
 
 		/* wait for hw recommended delay for usb */
-		msleep(20);
+		//msleep(20);
 		timeout--;
 	}
 	of_node_put(usb_node);

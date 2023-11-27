@@ -478,7 +478,7 @@ static int dp_display_hdcp_process_sink_sync(struct dp_display_private *dp)
 		 * and before it can handle an HDCP authentication request.
 		 * Adding the delay for better interoperability.
 		 */
-		msleep(6000);
+		//msleep(6000);
 	}
 	SDE_EVT32_EXTERNAL(SDE_EVTLOG_FUNC_EXIT);
 
@@ -1415,7 +1415,7 @@ static int dp_display_init_aux_switch(struct dp_display_private *dp)
 			break;
 		} else {
 			DP_DEBUG("failed to register notifier retry=%d rc=%d\n", retry, rc);
-			msleep(100);
+			//msleep(100);
 		}
 	}
 
@@ -1643,7 +1643,7 @@ static void dp_display_disconnect_sync(struct dp_display_private *dp)
 	disconnect_delay_ms = min_t(u32, dp->debug->disconnect_delay_ms,
 			(u32) MAX_DISCONNECT_DELAY_MS);
 	DP_DEBUG("disconnect delay = %d ms\n", disconnect_delay_ms);
-	msleep(disconnect_delay_ms);
+	//msleep(disconnect_delay_ms);
 
 	dp_display_handle_disconnect(dp);
 	SDE_EVT32_EXTERNAL(SDE_EVTLOG_FUNC_EXIT, dp->state,

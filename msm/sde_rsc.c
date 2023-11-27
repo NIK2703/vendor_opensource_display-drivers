@@ -174,7 +174,7 @@ void sde_rsc_client_destroy(struct sde_rsc_client *client)
 			SDE_EVT32(client->id, state, rsc->current_state,
 					client->crtc_id, wait_vblank_crtc_id,
 					SDE_EVTLOG_ERROR);
-			msleep(RSC_VSYNC_TIMEOUT_MS(rsc));
+			//msleep(RSC_VSYNC_TIMEOUT_MS(rsc));
 		}
 	}
 	mutex_lock(&rsc->client_lock);
@@ -543,7 +543,7 @@ vsync_wait:
 			SDE_EVT32(caller_client->id, rsc->current_state,
 					caller_client->crtc_id,
 					wait_vblank_crtc_id, SDE_EVTLOG_ERROR);
-			msleep(RSC_VSYNC_TIMEOUT_MS(rsc));
+			//msleep(RSC_VSYNC_TIMEOUT_MS(rsc));
 		} else {
 			*wait_vblank_crtc_id = rsc->primary_client->crtc_id;
 		}
@@ -590,7 +590,7 @@ static int sde_rsc_switch_to_clk(struct sde_rsc_priv *rsc,
 			rsc->hw_ops.hw_vsync(rsc, VSYNC_ENABLE, NULL, 0, 0);
 		if (!wait_vblank_crtc_id) {
 			pr_err("invalid crtc id wait pointer provided\n");
-			msleep(RSC_VSYNC_TIMEOUT_MS(rsc));
+			//msleep(RSC_VSYNC_TIMEOUT_MS(rsc));
 		} else {
 			*wait_vblank_crtc_id = rsc->primary_client->crtc_id;
 
@@ -691,7 +691,7 @@ vsync_wait:
 			SDE_EVT32(caller_client->id, rsc->current_state,
 					caller_client->crtc_id,
 					wait_vblank_crtc_id, SDE_EVTLOG_ERROR);
-			msleep(RSC_VSYNC_TIMEOUT_MS(rsc));
+			//msleep(RSC_VSYNC_TIMEOUT_MS(rsc));
 		} else {
 			*wait_vblank_crtc_id = rsc->primary_client->crtc_id;
 		}

@@ -434,7 +434,7 @@ static int sde_hdcp_1x_wait_for_hw_ready(struct sde_hdcp_1x *hdcp)
 	}
 
 	/* As per hardware recommendations, wait before reading An */
-	msleep(20);
+	//msleep(20);
 error:
 	if (!sde_hdcp_1x_state(HDCP_STATE_AUTHENTICATING))
 		rc = -EINVAL;
@@ -609,7 +609,7 @@ static int sde_hdcp_1x_verify_r0(struct sde_hdcp_1x *hdcp)
 	 * Wait here at least 100ms before reading R0'
 	 */
 	if (hdcp->init_data.client_id == HDCP_CLIENT_HDMI) {
-		msleep(100);
+		//msleep(100);
 	} else {
 		if (!hdcp->sink_r0_ready) {
 			reinit_completion(&hdcp->sink_r0_available);
@@ -944,7 +944,7 @@ static int sde_hdcp_1x_wait_for_ksv_ready(struct sde_hdcp_1x *hdcp)
 				pr_err("error reading bcaps\n");
 				goto error;
 			}
-			msleep(100);
+			//msleep(100);
 		}
 	} else {
 		u8 cp_buf = 0;
@@ -972,7 +972,7 @@ static int sde_hdcp_1x_wait_for_ksv_ready(struct sde_hdcp_1x *hdcp)
 				break;
 
 			/* re-read after a minimum delay */
-			msleep(20);
+			//msleep(20);
 		}
 	}
 
